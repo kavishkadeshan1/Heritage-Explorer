@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Anuradhapura - Ancient Sacred City and UNESCO World Heritage Site">
+    <title>Anuradhapura - Heritage Explorer</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-heritage-primary sticky-top shadow">
+        <div class="container">
+            <!-- NEW CODE WITH LOGO -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" alt="Heritage Explorer Logo" height="40" class="me-2">
+                <span class="fw-bold">Heritage Explorer</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html"><i class="bi bi-house-door"></i> Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="map.html"><i class="bi bi-map"></i> Map</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html"><i class="bi bi-info-circle"></i> About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="quiz.html"><i class="bi bi-patch-question"></i> Quiz</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section" style="height: 50vh; background-image: url('images/anuradhapura.jpg');">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content text-white">
+            <nav aria-label="breadcrumb">
+                
+            </nav>
+            <h1 class="display-2 fw-bold mb-3 text-white">Sacred City of Anuradhapura</h1>
+            <p class="lead fs-4 text-white">Ancient Capital · Sri Maha Bodhi · UNESCO World Heritage Site</p>
+            <div class="d-flex gap-3 mt-4 flex-wrap">
+                <a href="anuradhapura-gallery.html" class="btn btn-warning btn-lg">
+                    <i class="bi bi-images me-2"></i>View Gallery
+                </a>
+                <a href="#details" class="btn btn-outline-light btn-lg">
+                    <i class="bi bi-info-circle me-2"></i>Learn More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Facts -->
+    <section class="py-4 bg-heritage-primary text-white">
+        <div class="container">
+            <div class="row text-center g-4">
+                <div class="col-md-3">
+                    <i class="bi bi-calendar3 fs-2 mb-2"></i>
+                    <p class="mb-0"><strong>Founded:</strong> 4th Century BC</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="bi bi-tree fs-2 mb-2"></i>
+                    <p class="mb-0"><strong>Sacred Tree:</strong> 2,300+ years old</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="bi bi-award fs-2 mb-2"></i>
+                    <p class="mb-0"><strong>UNESCO:</strong> Since 1982</p>
+                </div>
+                <div class="col-md-3">
+                    <i class="bi bi-clock-history fs-2 mb-2"></i>
+                    <p class="mb-0"><strong>Capital:</strong> 1,400 years</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section id="details" class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                
+                <div class="col-lg-8">
+
+                    <!-- Historical Significance -->
+                    <div class="mb-5">
+                        <h3 class="fw-bold mb-4">
+                            <i class="bi bi-clock-history text-warning"></i> Historical Timeline
+                        </h3>
+                        <div class="card border-0 shadow-sm mb-3">
+                            <div class="card-body">
+                                <h5 class="fw-bold">Foundation (377 BC)</h5>
+                                <p class="text-muted mb-0">
+                                    King Pandukabhaya established Anuradhapura as the capital city. He planned 
+                                    the city with cemeteries, temples, hospitals, and parks.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card border-0 shadow-sm mb-3">
+                            <div class="card-body">
+                                <h5 class="fw-bold">Buddhism Arrives (3rd Century BC)</h5>
+                                <p class="text-muted mb-0">
+                                    King Devanampiya Tissa received Buddhism from Mahinda (son of Emperor Ashoka). 
+                                    The Sri Maha Bodhi tree was planted from a sapling of the original Bodhi tree 
+                                    under which Buddha attained enlightenment.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card border-0 shadow-sm mb-3">
+                            <div class="card-body">
+                                <h5 class="fw-bold">Golden Age (1st-5th Century AD)</h5>
+                                <p class="text-muted mb-0">
+                                    Construction of massive stupas including Ruwanwelisaya, Jetavanaramaya 
+                                    (one of the tallest brick structures in the ancient world), and Abhayagiri.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card border-0 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="fw-bold">Decline (11th Century)</h5>
+                                <p class="text-muted mb-0">
+                                    Repeated invasions from South India led to the abandonment of Anuradhapura 
+                                    as the capital. The city was reclaimed by jungle until its rediscovery and 
+                                    restoration in the 19th century.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Key Attractions -->
+                    <div class="mb-5">
+                        <h3 class="fw-bold mb-4">
+                            <i class="bi bi-star text-warning"></i> Sacred Sites & Monuments
+                        </h3>
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="fw-bold">
+                                            <i class="bi bi-tree-fill text-warning"></i> Sri Maha Bodhi Tree
+                                        </h5>
+                                        <p class="text-muted mb-0">
+                                            The oldest historically documented tree in the world (planted 288 BC). 
+                                            Grown from a cutting of the original Bodhi tree in India.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="fw-bold">
+                                            <i class="bi bi-building text-warning"></i> Ruwanwelisaya Stupa
+                                        </h5>
+                                        <p class="text-muted mb-0">
+                                            Built by King Dutugemunu (2nd century BC). White dome stupa 
+                                            standing 103 meters tall with a circumference of 290 meters.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="fw-bold">
+                                            <i class="bi bi-building-fill-up text-warning"></i> Jetavanaramaya
+                                        </h5>
+                                        <p class="text-muted mb-0">
+                                            Once the tallest stupa in the ancient world (122 meters). Built in 
+                                            3rd century AD, it was the third tallest structure globally at the time.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="fw-bold">
+                                            <i class="bi bi-droplet-fill text-warning"></i> Twin Ponds (Kuttam Pokuna)
+                                        </h5>
+                                        <p class="text-muted mb-0">
+                                            Sophisticated bathing pools for monks with advanced filtration 
+                                            systems. Perfect example of ancient hydraulic engineering.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="fw-bold">
+                                            <i class="bi bi-moon-stars text-warning"></i> Abhayagiri Monastery
+                                        </h5>
+                                        <p class="text-muted mb-0">
+                                            Once housed 5,000 monks. The monastery complex covered 235 hectares 
+                                            with libraries, hospitals, and meditation halls.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="fw-bold">
+                                            <i class="bi bi-gem text-warning"></i> Samadhi Buddha Statue
+                                        </h5>
+                                        <p class="text-muted mb-0">
+                                            Serene 4th-century Buddha statue depicting deep meditation. 
+                                            Considered one of the finest Buddha statues in Sri Lanka.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="fw-bold">
+                                            <i class="bi bi-water text-warning"></i> Basawakkulama Tank
+                                        </h5>
+                                        <p class="text-muted mb-0">
+                                            Ancient reservoir built by King Pandukabhaya in 4th century BC. 
+                                            Part of sophisticated irrigation network.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card h-100 border-0 shadow-sm">
+                                    <div class="card-body">
+                                        <h5 class="fw-bold">
+                                            <i class="bi bi-stairs text-warning"></i> Moonstone Carvings
+                                        </h5>
+                                        <p class="text-muted mb-0">
+                                            Semicircular carved stones at building entrances depicting 
+                                            Buddhist cosmology and the path to enlightenment.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cultural Significance -->
+                    <div class="mb-5">
+                        <h3 class="fw-bold mb-4">
+                            <i class="bi bi-heart text-warning"></i> Religious & Cultural Importance
+                        </h3>
+                        <p>Anuradhapura remains deeply significant to Buddhism and Sri Lankan culture:</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <strong>Living Sacred City:</strong> Still an active pilgrimage site visited 
+                                by thousands of Buddhist devotees daily
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <strong>Vesak Celebrations:</strong> Major Buddhist festival celebrations 
+                                attract pilgrims from around the world
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <strong>Archaeological Treasure:</strong> Ongoing excavations continue to 
+                                reveal new insights into ancient civilization
+                            </li>
+                            <li class="mb-3">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                <strong>UNESCO Recognition:</strong> Protected as cultural property of 
+                                outstanding universal value
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    
+                    <div class="card border-0 shadow-lg mb-4 sticky-top" style="top: 100px;">
+                        <div class="card-header bg-heritage-primary text-white">
+                            <h5 class="mb-0 fw-bold">
+                                <i class="bi bi-info-circle"></i> Visitor Information
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-2">
+                                    <i class="bi bi-clock text-warning"></i> Opening Hours
+                                </h6>
+                                <p class="text-muted mb-0">24 hours (sacred sites)</p>
+                                <small class="text-muted">Museum: 8:00 AM - 5:00 PM</small>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-2">
+                                    <i class="bi bi-cash text-warning"></i> Entrance Fee
+                                </h6>
+                                <p class="text-muted mb-0">Foreign Adults: $25 USD</p>
+                                <small class="text-muted">SAARC: Rs. 1,500<br>Local: Rs. 100</small>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-2">
+                                    <i class="bi bi-sun text-warning"></i> Best Time
+                                </h6>
+                                <p class="text-muted mb-0">Early morning or late afternoon</p>
+                                <small class="text-muted">Avoid midday heat</small>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-2">
+                                    <i class="bi bi-watch text-warning"></i> Duration
+                                </h6>
+                                <p class="text-muted mb-0">Full day (6-8 hours)</p>
+                                <small class="text-muted">Sites are spread across large area</small>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-2">
+                                    <i class="bi bi-car-front text-warning"></i> Location
+                                </h6>
+                                <p class="text-muted mb-2">North Central Province</p>
+                                <small class="text-muted">From Colombo: 205 km (4.5 hours)<br>
+                                From Sigiriya: 68 km (1.5 hours)</small>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <h6 class="fw-bold mb-2">
+                                    <i class="bi bi-exclamation-triangle text-warning"></i> Important Tips
+                                </h6>
+                                <ul class="text-muted small ps-3">
+                                    <li>Dress modestly (white clothes preferred)</li>
+                                    <li>Remove shoes at sacred sites</li>
+                                    <li>Bring water and sunscreen</li>
+                                    <li>Hire bicycle or tuk-tuk for touring</li>
+                                    <li>Respectful behavior required</li>
+                                </ul>
+                            </div>
+                            
+                            <a href="anuradhapura-gallery.html" class="btn btn-heritage-primary w-100">
+                                <i class="bi bi-images me-2"></i>View Full Gallery
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Other Sites -->
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-light">
+                            <h6 class="mb-0 fw-bold">Explore Other Sites</h6>
+                        </div>
+                        <div class="list-group list-group-flush">
+                            <a href="galle.html" class="list-group-item list-group-item-action">
+                                <i class="bi bi-building text-warning"></i> Galle Fort
+                            </a>
+                            <a href="sigiriya.html" class="list-group-item list-group-item-action">
+                                <i class="bi bi-mountain text-warning"></i> Sigiriya
+                            </a>
+                            <a href="kandy.html" class="list-group-item list-group-item-action">
+                                <i class="bi bi-gem text-warning"></i> Kandy
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5 bg-heritage-light">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Ready to Explore More?</h2>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="anuradhapura-gallery.html" class="btn btn-heritage-primary btn-lg">
+                    <i class="bi bi-images me-2"></i>View Gallery
+                </a>
+                <a href="map.html" class="btn btn-outline-secondary btn-lg">
+                    <i class="bi bi-map me-2"></i>Back to Map
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <!-- NEW CODE WITH LOGO -->
+                    <h5 class="fw-bold mb-3 d-flex align-items-center">
+                        <img src="images/logo.png" alt="Heritage Explorer" height="30" class="me-2">
+                        Heritage Explorer
+                    </h5>
+                    <p class="text-muted small">Preserving Sri Lanka's cultural heritage.</p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none footer-link">Home</a></li>
+                        <li class="mb-2"><a href="map.html" class="text-white-50 text-decoration-none footer-link">Map</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none footer-link">About</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Connect</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center text-muted small">
+                <p class="mb-0">&copy; 2025 Heritage Explorer.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+</html>

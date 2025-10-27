@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Sri Lanka's UNESCO World Heritage Sites - Galle, Sigiriya, Anuradhapura, and Kandy">
+    <title>Heritage Explorer - Discover Sri Lanka's Ancient Treasures</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-heritage-primary sticky-top shadow">
+        <div class="container">
+            <!-- NEW CODE WITH LOGO -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" alt="Heritage Explorer Logo" height="40" class="me-2">
+                <span class="fw-bold">Heritage Explorer</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">
+                            <i class="bi bi-house-door"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="map.html">
+                            <i class="bi bi-map"></i> Map
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="bi bi-info-circle"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quiz.html">
+                            <i class="bi bi-patch-question"></i> Quiz
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section d-flex align-items-center justify-content-center text-white text-center">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="display-2 fw-bold mb-4 animate-fade-in">Discover Sri Lanka's Ancient Treasures</h1>
+            <p class="lead fs-3 mb-5 animate-fade-in-delay">Explore 2,500 Years of Cultural Heritage</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap animate-fade-in-delay-2">
+                <a href="map.html" class="btn btn-warning btn-lg px-5 py-3 shadow">
+                    <i class="bi bi-map me-2"></i>Explore Sites
+                </a>
+                <a href="quiz.html" class="btn btn-outline-light btn-lg px-5 py-3">
+                    <i class="bi bi-patch-question me-2"></i>Take Quiz
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="display-5 fw-bold mb-4">Welcome to Heritage Explorer</h2>
+                    <p class="lead text-muted mb-4">
+                        Sri Lanka, the Pearl of the Indian Ocean, is home to eight magnificent UNESCO World Heritage Sites 
+                        that showcase thousands of years of rich cultural and natural history.
+                    </p>
+                    <p class="text-muted">
+                        Our platform helps you discover and learn about the most iconic heritage sites including ancient 
+                        cities, colonial fortresses, sacred temples, and breathtaking natural landscapes. Embark on a 
+                        journey through time and explore the wonders that make Sri Lanka truly remarkable.
+                    </p>
+                    <a href="about.html" class="btn btn-heritage-primary mt-3">
+                        Learn More <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+                <div class="col-lg-6">
+                    <img src="images/learn.jpeg" 
+                         alt="Sri Lankan Heritage" class="img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage Sites Cards -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center display-5 fw-bold mb-2">Explore Our Featured Heritage Sites</h2>
+            <p class="text-center text-muted mb-5">Click on any site to learn more about its history and significance</p>
+            
+            <div class="row g-4">
+                
+                <!-- Galle Fort Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm heritage-card">
+                        <div class="card-img-wrapper">
+                            <img src="images/galle.jpg" 
+                                 class="card-img-top" alt="Galle Fort">
+                            <div class="card-badge">UNESCO Site</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">
+                                <i class="bi bi-building text-warning"></i> Galle Fort
+                            </h5>
+                            <p class="card-text text-muted flex-grow-1">
+                                A 17th-century Dutch colonial fortress showcasing European architecture 
+                                blended with South Asian traditions.
+                            </p>
+                            <div class="d-flex gap-2">
+                                <a href="galle.html" class="btn btn-primary flex-grow-1">
+                                    <i class="bi bi-info-circle"></i> Explore
+                                </a>
+                                <a href="galle-gallery.html" class="btn btn-outline-secondary">
+                                    <i class="bi bi-images"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sigiriya Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm heritage-card">
+                        <div class="card-img-wrapper">
+                            <img src="images/sigiriya.jpg" 
+                                 class="card-img-top" alt="Sigiriya Rock Fortress">
+                            <div class="card-badge">UNESCO Site</div>
+                        </div>
+                                    <div class="card-body d-flex flex-column">
+                                                            <h5 class="card-title fw-bold">
+                                <i class="bi bi-geo-alt-fill text-warning"></i> Sigiriya
+                                </h5>
+
+                            <p class="card-text text-muted flex-grow-1">
+                                The magnificent 5th-century rock fortress with stunning frescoes 
+                                and advanced hydraulic systems.
+                            </p>
+                            <div class="d-flex gap-2">
+                                <a href="sigiriya.html" class="btn btn-primary flex-grow-1">
+                                    <i class="bi bi-info-circle"></i> Explore
+                                </a>
+                                <a href="sigiriya-gallery.html" class="btn btn-outline-secondary">
+                                    <i class="bi bi-images"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Anuradhapura Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm heritage-card">
+                        <div class="card-img-wrapper">
+                            <img src="images/anuradhapura.jpg" 
+                                 class="card-img-top" alt="Anuradhapura Ancient City">
+                            <div class="card-badge">UNESCO Site</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">
+                                <i class="bi bi-bank text-warning"></i> Anuradhapura
+                            </h5>
+                            <p class="card-text text-muted flex-grow-1">
+                                Sri Lanka's first ancient capital with magnificent stupas, 
+                                monasteries, and the sacred Sri Maha Bodhi tree.
+                            </p>
+                            <div class="d-flex gap-2">
+                                <a href="anuradhapura.html" class="btn btn-primary flex-grow-1">
+                                    <i class="bi bi-info-circle"></i> Explore
+                                </a>
+                                <a href="anuradhapura-gallery.html" class="btn btn-outline-secondary">
+                                    <i class="bi bi-images"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kandy Card -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 shadow-sm heritage-card">
+                        <div class="card-img-wrapper">
+                            <img src="images/kandy.jpg" 
+                                 class="card-img-top" alt="Temple of the Tooth Kandy">
+                            <div class="card-badge">UNESCO Site</div>
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title fw-bold">
+                                <i class="bi bi-gem text-warning"></i> Kandy
+                            </h5>
+                            <p class="card-text text-muted flex-grow-1">
+                                The last capital of ancient Sri Lankan kingdoms, home to the 
+                                sacred Temple of the Tooth Relic.
+                            </p>
+                            <div class="d-flex gap-2">
+                                <a href="kandy.html" class="btn btn-primary flex-grow-1">
+                                    <i class="bi bi-info-circle"></i> Explore
+                                </a>
+                                <a href="kandy-gallery.html" class="btn btn-outline-secondary">
+                                    <i class="bi bi-images"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-5 bg-heritage-light">
+        <div class="container">
+            <h2 class="text-center display-5 fw-bold mb-5">Why Heritage Explorer?</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-book fs-1 text-warning"></i>
+                        </div>
+                        <h4 class="fw-bold">Comprehensive Information</h4>
+                        <p class="text-muted">
+                            Detailed historical facts, cultural significance, and visitor information 
+                            for each heritage site.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-images fs-1 text-warning"></i>
+                        </div>
+                        <h4 class="fw-bold">Stunning Galleries</h4>
+                        <p class="text-muted">
+                            High-quality image galleries showcasing the beauty and grandeur 
+                            of each heritage location.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="text-center">
+                        <div class="feature-icon mb-3">
+                            <i class="bi bi-mortarboard fs-1 text-warning"></i>
+                        </div>
+                        <h4 class="fw-bold">Interactive Learning</h4>
+                        <p class="text-muted">
+                            Test your knowledge with our interactive quiz and explore sites 
+                            through our interactive map.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-5 bg-heritage-primary text-white">
+        <div class="container text-center">
+            <h2 class="display-5 fw-bold mb-4">Ready to Explore?</h2>
+            <p class="lead mb-4">
+                Start your journey through Sri Lanka's magnificent heritage sites today!
+            </p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="map.html" class="btn btn-warning btn-lg px-5">
+                    <i class="bi bi-map me-2"></i>View Interactive Map
+                </a>
+                <a href="contact.html" class="btn btn-outline-light btn-lg px-5">
+                    <i class="bi bi-envelope me-2"></i>Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <!-- NEW CODE WITH LOGO -->
+                    <h5 class="fw-bold mb-3 d-flex align-items-center">
+                        <img src="images/logo.png" alt="Heritage Explorer" height="30" class="me-2">
+                        Heritage Explorer
+                    </h5>
+                    <p class="text-muted small">
+                        Preserving and promoting Sri Lanka's magnificent cultural heritage for future generations.
+                    </p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none footer-link">Home</a></li>
+                        <li><a href="map.html" class="text-white-50 text-decoration-none footer-link">Map</a></li>
+                        <li><a href="about.html" class="text-white-50 text-decoration-none footer-link">About</a></li>
+                        <li><a href="quiz.html" class="text-white-50 text-decoration-none footer-link">Quiz</a></li>
+                        <li><a href="contact.html" class="text-white-50 text-decoration-none footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Connect With Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center text-muted small">
+                <p class="mb-0">&copy; 2025 Heritage Explorer. All Rights Reserved. | Preserving Sri Lanka's Heritage</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

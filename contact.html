@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Heritage Explorer - Get in touch with us for inquiries about Sri Lankan heritage sites">
+    <title>Contact Us - Heritage Explorer</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-heritage-primary sticky-top shadow">
+        <div class="container">
+            <!-- NEW CODE WITH LOGO -->
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" alt="Heritage Explorer Logo" height="40" class="me-2">
+                <span class="fw-bold">Heritage Explorer</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-door"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="map.html">
+                            <i class="bi bi-map"></i> Map
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="bi bi-info-circle"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quiz.html">
+                            <i class="bi bi-patch-question"></i> Quiz
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contact.html">
+                            <i class="bi bi-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-heritage-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-3">Contact Us</h1>
+            <p class="lead">We'd love to hear from you! Get in touch with any questions or feedback.</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-5">
+                
+                <!-- Contact Form -->
+                <div class="col-lg-7">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="fw-bold mb-4">Send Us a Message</h3>
+                            
+                            <form id="contactForm">
+                                <!-- Name -->
+                                <div class="mb-4">
+                                    <label for="name" class="form-label fw-semibold">
+                                        <i class="bi bi-person text-warning"></i> Full Name *
+                                    </label>
+                                    <input type="text" class="form-control form-control-lg" id="name" 
+                                           placeholder="Enter your name" required>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="mb-4">
+                                    <label for="email" class="form-label fw-semibold">
+                                        <i class="bi bi-envelope text-warning"></i> Email Address *
+                                    </label>
+                                    <input type="email" class="form-control form-control-lg" id="email" 
+                                           placeholder="your.email@example.com" required>
+                                </div>
+
+                                <!-- Phone -->
+                                <div class="mb-4">
+                                    <label for="phone" class="form-label fw-semibold">
+                                        <i class="bi bi-telephone text-warning"></i> Phone Number
+                                    </label>
+                                    <input type="tel" class="form-control form-control-lg" id="phone" 
+                                           placeholder="+94 XX XXX XXXX">
+                                </div>
+
+                                <!-- Inquiry Type -->
+                                <div class="mb-4">
+                                    <label for="inquiryType" class="form-label fw-semibold">
+                                        <i class="bi bi-tag text-warning"></i> Inquiry Type *
+                                    </label>
+                                    <select class="form-select form-select-lg" id="inquiryType" required>
+                                        <option value="">Select inquiry type...</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="tour">Tour Information</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="partnership">Partnership Opportunity</option>
+                                        <option value="technical">Technical Support</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <!-- Message -->
+                                <div class="mb-4">
+                                    <label for="message" class="form-label fw-semibold">
+                                        <i class="bi bi-chat-text text-warning"></i> Message *
+                                    </label>
+                                    <textarea class="form-control form-control-lg" id="message" rows="6" 
+                                              placeholder="Tell us how we can help you..." required></textarea>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-heritage-primary btn-lg">
+                                        <i class="bi bi-send me-2"></i>Send Message
+                                    </button>
+                                </div>
+
+                                <!-- Success Message (Hidden by default) -->
+                                <div id="successMessage" class="alert alert-success mt-4 d-none" role="alert">
+                                    <i class="bi bi-check-circle-fill me-2"></i>
+                                    Thank you for contacting us! We'll get back to you within 24-48 hours.
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="col-lg-5">
+                    <h3 class="fw-bold mb-4">Get In Touch</h3>
+                    <p class="text-muted mb-4">
+                        Have questions about Sri Lanka's heritage sites? Need assistance planning your visit? 
+                        We're here to help!
+                    </p>
+
+                    <!-- Contact Details -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="me-3">
+                                    <i class="bi bi-envelope-fill fs-3 text-warning"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Email</h6>
+                                    <a href="mailto:info@heritageexplorer.lk" class="text-muted text-decoration-none">
+                                        info@heritageexplorer.lk
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-start mb-4">
+                                <div class="me-3">
+                                    <i class="bi bi-telephone-fill fs-3 text-warning"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Phone</h6>
+                                    <a href="tel:+94112345678" class="text-muted text-decoration-none">
+                                        +94 11 234 5678
+                                    </a>
+                                </div>
+                            </div>
+
+                            <div class="d-flex align-items-start">
+                                <div class="me-3">
+                                    <i class="bi bi-geo-alt-fill fs-3 text-warning"></i>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-1">Address</h6>
+                                    <p class="text-muted mb-0">
+                                        123 Heritage Lane<br>
+                                        Colombo 07, Sri Lanka
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Office Hours -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h6 class="fw-bold mb-3">
+                                <i class="bi bi-clock text-warning"></i> Office Hours
+                            </h6>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Monday - Friday:</span>
+                                <span class="fw-semibold">9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="text-muted">Saturday:</span>
+                                <span class="fw-semibold">10:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <span class="text-muted">Sunday:</span>
+                                <span class="fw-semibold">Closed</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h6 class="fw-bold mb-3">Follow Us</h6>
+                            <div class="d-flex gap-3">
+                                <a href="#" class="btn btn-outline-primary btn-lg">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-info btn-lg">
+                                    <i class="bi bi-twitter"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-danger btn-lg">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="#" class="btn btn-outline-danger btn-lg">
+                                    <i class="bi bi-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center display-5 fw-bold mb-5">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        
+                        <div class="accordion-item border-0 shadow-sm mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-semibold" type="button" 
+                                        data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    How can I visit these heritage sites?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    All heritage sites are open to visitors. We recommend checking each site's specific 
+                                    page for visiting hours, ticket prices, and best times to visit. You can also contact 
+                                    us for tour recommendations.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 shadow-sm mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" 
+                                        data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Are the galleries free to browse?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Yes! All galleries and information on Heritage Explorer are completely free to access. 
+                                    Our mission is to make heritage education accessible to everyone.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 shadow-sm mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" 
+                                        data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Can I use images from the galleries?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Please contact us for image usage permissions. We're happy to discuss educational 
+                                    and non-commercial use cases.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" 
+                                        data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    How can I contribute to Heritage Explorer?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    We welcome contributions! If you have photos, historical information, or would like 
+                                    to partner with us, please use the contact form above to get in touch.
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <!-- NEW CODE WITH LOGO -->
+                    <h5 class="fw-bold mb-3 d-flex align-items-center">
+                        <img src="images/logo.png" alt="Heritage Explorer" height="30" class="me-2">
+                        Heritage Explorer
+                    </h5>
+                    <p class="text-muted small">
+                        Preserving and promoting Sri Lanka's magnificent cultural heritage for future generations.
+                    </p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white-50 text-decoration-none footer-link">Home</a></li>
+                        <li><a href="map.html" class="text-white-50 text-decoration-none footer-link">Map</a></li>
+                        <li><a href="about.html" class="text-white-50 text-decoration-none footer-link">About</a></li>
+                        <li><a href="quiz.html" class="text-white-50 text-decoration-none footer-link">Quiz</a></li>
+                        <li><a href="contact.html" class="text-white-50 text-decoration-none footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Connect With Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center text-muted small">
+                <p class="mb-0">&copy; 2025 Heritage Explorer. All Rights Reserved. | Preserving Sri Lanka's Heritage</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive map of Sri Lanka's UNESCO World Heritage Sites">
+    <title>Heritage Map - Heritage Explorer</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    
+    <style>
+        /* Interactive Map Styling */
+        .interactive-map {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .interactive-map img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        /* Map Markers */
+        .map-marker {
+            position: absolute;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .map-marker .marker-dot {
+            width: 30px;
+            height: 30px;
+            background: #D4AF37;
+            border: 3px solid white;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
+            animation: pulse 2s infinite;
+            position: relative;
+        }
+        
+        .map-marker:hover .marker-dot {
+            transform: scale(1.3);
+            animation: none;
+            background: #8B4513;
+        }
+        
+        /* Marker Labels */
+        .marker-label {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            white-space: nowrap;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        
+        .map-marker:hover .marker-label {
+            opacity: 1;
+            top: -35px;
+        }
+        
+        /* Pulse Animation */
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 5px 15px rgba(212, 175, 55, 0.5);
+            }
+            50% {
+                box-shadow: 0 5px 25px rgba(212, 175, 55, 0.8);
+            }
+        }
+        
+        /* Site List Cards */
+        .site-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border-left: 3px solid transparent;
+        }
+        
+        .site-card:hover {
+            background-color: #FFF8DC;
+            border-left: 3px solid #8B4513;
+            transform: translateX(5px);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .marker-label {
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+            
+            .map-marker .marker-dot {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-heritage-primary sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="index.html">
+                <img src="images/logo.png" alt="Heritage Explorer Logo" height="40" class="me-2">
+                <span class="fw-bold">Heritage Explorer</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            <i class="bi bi-house-door"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="map.html">
+                            <i class="bi bi-map"></i> Map
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            <i class="bi bi-info-circle"></i> About
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="quiz.html">
+                            <i class="bi bi-patch-question"></i> Quiz
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            <i class="bi bi-envelope"></i> Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header bg-heritage-primary text-white py-5">
+        <div class="container text-center">
+            <h1 class="display-3 fw-bold mb-3">Interactive Heritage Map</h1>
+            <p class="lead">Explore Sri Lanka's UNESCO World Heritage Sites</p>
+            <p class="small">Click on any marker to visit that heritage site</p>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                
+                <!-- Map Column -->
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-lg">
+                        <div class="card-body p-4">
+                            <h3 class="fw-bold mb-4 text-center">
+                                <i class="bi bi-geo-alt text-warning"></i> Click on a marker to explore
+                            </h3>
+                            
+                            <!-- Interactive Map Container -->
+                            <div class="interactive-map">
+    <img src="images/sri-lanka-map.png" alt="Sri Lanka Map" id="mapImage" style="width: 350px; height: auto;">
+
+
+   <!-- Galle - at the lighthouse on the left/bottom -->
+<a href="galle.html" class="map-marker" style="left: 42%; top: 85%;">
+    <div class="marker-dot"></div>
+    <div class="marker-label">Galle Fort</div>
+</a>
+
+<!-- Anuradhapura - at the BIG stupa/temple cluster near the very top -->
+<a href="anuradhapura.html" class="map-marker" style="left: 46%; top: 31%;">
+    <div class="marker-dot"></div>
+    <div class="marker-label">Anuradhapura</div>
+</a>
+
+
+    <!-- Sigiriya (central, upper-right of center) -->
+    <a href="sigiriya.html" class="map-marker" style="left: 49%; top: 42%;">
+        <div class="marker-dot"></div>
+        <div class="marker-label">Sigiriya</div>
+    </a>
+
+    
+
+    <!-- Kandy (central uplands, above waterfall, this was already correct) -->
+    <a href="kandy.html" class="map-marker" style="left: 45%; top: 59%;">
+        <div class="marker-dot"></div>
+        <div class="marker-label">Kandy</div>
+    </a>
+</div>
+                            
+                            <!-- Map Legend -->
+                            <div class="bg-light p-4 mt-4 rounded">
+                                <h5 class="fw-bold mb-3">
+                                    <i class="bi bi-info-circle text-warning"></i> Map Guide
+                                </h5>
+                                <div class="row">
+                                    <div class="col-md-6 mb-2">
+                                        <i class="bi bi-circle-fill text-warning me-2"></i>
+                                        <span>UNESCO World Heritage Site</span>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <i class="bi bi-cursor-fill text-primary me-2"></i>
+                                        <span>Click markers to visit sites</span>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <i class="bi bi-hand-index-thumb text-success me-2"></i>
+                                        <span>Hover to see site names</span>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <i class="bi bi-map text-danger me-2"></i>
+                                        <span>4 Featured Heritage Sites</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sites List Column -->
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-lg sticky-top" style="top: 100px;">
+                        <div class="card-header bg-heritage-primary text-white">
+                            <h4 class="mb-0 fw-bold">
+                                <i class="bi bi-list-ul"></i> Heritage Sites
+                            </h4>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="list-group list-group-flush">
+                                
+                                <!-- Galle -->
+                                <a href="galle.html" class="list-group-item list-group-item-action site-card p-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-building text-warning fs-3 me-3"></i>
+                                        <div>
+                                            <h6 class="mb-1 fw-bold">Galle Fort</h6>
+                                            <small class="text-muted">Dutch Colonial Heritage</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <!-- Sigiriya -->
+                                <a href="sigiriya.html" class="list-group-item list-group-item-action site-card p-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-geo-alt-fill text-warning fs-3 me-3"></i>
+                                        <div>
+                                            <h6 class="mb-1 fw-bold">Sigiriya</h6>
+                                            <small class="text-muted">Ancient Rock Fortress</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <!-- Anuradhapura -->
+                                <a href="anuradhapura.html" class="list-group-item list-group-item-action site-card p-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-bank text-warning fs-3 me-3"></i>
+                                        <div>
+                                            <h6 class="mb-1 fw-bold">Anuradhapura</h6>
+                                            <small class="text-muted">Sacred Ancient City</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                                <!-- Kandy -->
+                                <a href="kandy.html" class="list-group-item list-group-item-action site-card p-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-gem text-warning fs-3 me-3"></i>
+                                        <div>
+                                            <h6 class="mb-1 fw-bold">Kandy</h6>
+                                            <small class="text-muted">Temple of the Tooth</small>
+                                        </div>
+                                    </div>
+                                </a>
+                                
+                            </div>
+                        </div>
+                        <div class="card-footer bg-light text-center">
+                            <small class="text-muted">
+                                <i class="bi bi-info-circle"></i> 4 Featured Sites
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center display-5 fw-bold mb-5">Heritage by Numbers</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <i class="bi bi-globe text-warning fs-1 mb-3"></i>
+                            <h2 class="display-4 fw-bold mb-2">8</h2>
+                            <p class="text-muted mb-0">UNESCO Sites</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <i class="bi bi-calendar3 text-warning fs-1 mb-3"></i>
+                            <h2 class="display-4 fw-bold mb-2">2500+</h2>
+                            <p class="text-muted mb-0">Years of History</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <i class="bi bi-building text-warning fs-1 mb-3"></i>
+                            <h2 class="display-4 fw-bold mb-2">6</h2>
+                            <p class="text-muted mb-0">Cultural Sites</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <i class="bi bi-tree text-warning fs-1 mb-3"></i>
+                            <h2 class="display-4 fw-bold mb-2">2</h2>
+                            <p class="text-muted mb-0">Natural Sites</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="fw-bold mb-3 d-flex align-items-center">
+                        <img src="images/logo.png" alt="Heritage Explorer" height="30" class="me-2">
+                        Heritage Explorer
+                    </h5>
+                    <p class="text-muted small">
+                        Preserving and promoting Sri Lanka's magnificent cultural heritage for future generations.
+                    </p>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="text-white-50 text-decoration-none footer-link">Home</a></li>
+                        <li class="mb-2"><a href="map.html" class="text-white-50 text-decoration-none footer-link">Map</a></li>
+                        <li class="mb-2"><a href="about.html" class="text-white-50 text-decoration-none footer-link">About</a></li>
+                        <li class="mb-2"><a href="quiz.html" class="text-white-50 text-decoration-none footer-link">Quiz</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-white-50 text-decoration-none footer-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Connect With Us</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 bg-secondary">
+            <div class="text-center text-white-50 small">
+                <p class="mb-0">&copy; 2025 Heritage Explorer. All Rights Reserved. | Preserving Sri Lanka's Heritage</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
